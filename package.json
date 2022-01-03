@@ -7,7 +7,8 @@
     "format": "prettier --write src/",
     "stylelint": "stylelint **.css --fix",
     "style": "stylelint 'src/**/*.{vue,css,less}' --fix",
-    "lint": "eslint --ext .js,.ts,.tsx test/ src/"
+    "lint": "eslint --ext .js,.ts,.tsx test/ src/",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,6 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-     }
-   } 
+    }
+  }
 }
