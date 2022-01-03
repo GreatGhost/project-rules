@@ -22,11 +22,5 @@
     "stylelint": "^14.2.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^24.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run lint"
-    }
   }
 }
