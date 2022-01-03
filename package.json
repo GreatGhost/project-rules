@@ -8,6 +8,7 @@
     "stylelint": "stylelint **.css --fix",
     "style": "stylelint 'src/**/*.{vue,css,less}' --fix",
     "lint": "eslint --ext .js,.ts,.tsx test/ src/",
+    "test":"",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -24,7 +25,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint"
     }
   }
 }
