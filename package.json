@@ -7,7 +7,7 @@
     "format": "prettier --write src/",
     "stylelint": "stylelint **.css --fix",
     "style": "stylelint 'src/**/*.{vue,css,less}' --fix",
-    "lint": "eslint --ext .js,.ts,.tsx test/ src/",
+    "lint": "eslint --ext .js,.ts,.tsx src/",
     "test": "",
     "prepare": "husky install"
   },
@@ -26,7 +26,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run lint"
 
     }
   }
