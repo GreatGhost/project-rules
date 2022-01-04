@@ -9,7 +9,10 @@
     "style": "stylelint 'src/**/*.{vue,css,less}' --fix",
     "lint2": "eslint --ext .js,.ts,.tsx src/",
     "test": "",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "eslint:fix":"eslint --ext .js,.ts src/ --fix",
+    "eslint:lint":"eslint --ext .js,.ts src/",
+    "stylelint:fix":"stylelint **.css --fix"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.0.1",
     "@commitlint/config-conventional": "^16.0.0",
+    "eslint": "^8.6.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.5",
     "prettier": "^2.5.1",
@@ -27,7 +31,18 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run lint2"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged":{
+    "linters":{
+      "*.{scss,less}":[
+        "npm run stylelint:fix",
+        "git add "
+      ],
+      "*.vue":["npm run stylelint:fix","npm run eslint:fix","git add"],
+      "*.js":["npm run eslint:fix","git add"]
+    },
+    "ignore":[]
   }
 }
